@@ -1,2 +1,2 @@
-# JpushApi
-极光推送 composer包
+# Jpush极光推送集成thinkphp使用说明
+

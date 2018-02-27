@@ -1,0 +1,19 @@
+{
+    "name": "doing/jpush",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Doing",
+            "email": "vip.dulin@gmail.com"
+        }
+    ],
+    "autoload": {
+        "files":[
+            "src/Jgconfig.php"
+        ],
+        "psr-4": {
+            "Jpush\\": "src"
+        }
+    },
+    "require": {}
+}
