@@ -31,5 +31,5 @@ if ($res == true)
 ```
 
 ### 额外说明
-此包写的比较有扩展信,更多的参数设置请去极光官网查看,根据业务需求酌情添加
+此包写的比较有扩展性,更多的参数设置请去极光官网查看,根据业务需求酌情添加
 https://docs.jiguang.cn/jpush/server/push/rest_api_v3_push/#audience
