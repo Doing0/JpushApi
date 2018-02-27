@@ -38,8 +38,8 @@ class JpushSer {
         $res = JpushApi::instance()->push($params, 'alias');
         #成功返回true
         if ($res === true) return true;
-        #失败去$res里面去拿极光的错误信息做相应的逻辑处理
-        throw new \Exception($res);
+        #失败  把失败信息转换成数组返回
+        return json_decode(json_encode($res), true);
     }//pub
 
     /** 简述:更新xxx发送

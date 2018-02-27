@@ -12,11 +12,14 @@ namespace Jpush;
 
 class JpushApi {
     #实例化对象
-    private static $instance = [];
+    private static $instance;
     #app_key在Jgconfig.php配置
     private $app_key = '';
     #master_secret在Jgconfig.php配置
     private $master_secret = '';
+    #baseurl
+    private $url = '';
+
 
     /**
      * JpushApi constructor.
@@ -25,6 +28,7 @@ class JpushApi {
     {
         $this->app_key = JG_APP_KEY;
         $this->master_secret = JG_MASTER_SCERET;
+        $this->url = JG_URL;
     }
 
     /**入口实例化对象
@@ -38,8 +42,10 @@ class JpushApi {
     {
         if (is_null(self::$instance))
         {
+
             self::$instance = new static();
         }
+
         return self::$instance;
     }
 
@@ -55,8 +61,9 @@ class JpushApi {
      *
      * @return bool
      */
-    public function push($param = [],$type='alias')
+    public function push($param = [], $type = 'alias')
     {
+
         $base64 = base64_encode("$this->app_key:$this->master_secret");
         $header = ["Authorization:Basic $base64", "Content-Type:application/json"];
         $data = [];
@@ -104,8 +111,8 @@ class JpushApi {
             //推送在线用户用JG_ONLINE如果需要保留其他时间请在Jgconfig.php里面的JG_TIME_TO_LIVE配置 并使用
             "time_to_live"    => JG_ONLINE,
 //            "time_to_live" = JG_TIME_TO_LIVE;
-        //指定 APNS 通知发送环境：0开发环境开发过程，1生产环境。
-            "apns_production" =>JG_APNS,
+            //指定 APNS 通知发送环境：0开发环境开发过程，1生产环境。
+            "apns_production" => JG_APNS,
         ];
         $param = json_encode($data);
         $res = json_decode($this->push_curl($param, $header));

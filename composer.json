@@ -1,6 +1,6 @@
 {
     "name": "doing/jpush",
-    "description": "极光appt推送融入php,在框架thinkphp5.0里面运行效果最佳",
+    "description": "极光app推送融入php,在框架thinkphp5.0里面运行效果最佳",
     "keywords": ["极光推送","推送","极光"],
     "license": "MIT",
     "authors": [
