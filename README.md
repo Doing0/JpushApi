@@ -2,6 +2,8 @@
 ## Jpush极光推送集成thinkphp使用说明
 > 别名是app端直接调极光的sdk去打别名:建议是用户在注册成时给用户打一个且项目里面唯一的别名:建议是id+时间戳
 
+### composer 安装命令
+composer require doing/jpush dev-master
 ### 1.去Jgconfig.php配置文件
 ### 2.调用推送 以别名推送为例
 
