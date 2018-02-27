@@ -108,9 +108,8 @@ class JpushApi {
         //附加选项
         $data['options'] = [
             "sendno"          => time(),
-            //推送在线用户用JG_ONLINE如果需要保留其他时间请在Jgconfig.php里面的JG_TIME_TO_LIVE配置 并使用
-            "time_to_live"    => JG_ONLINE,
-//            "time_to_live" = JG_TIME_TO_LIVE;
+            //推送在线用户还是离线用户 需要保留离线时间请在Jgconfig.php里面的JG_TIME_TO_LIVE配置 并使用
+            "time_to_live"    => JG_TIME_TO_LIVE,
             //指定 APNS 通知发送环境：0开发环境开发过程，1生产环境。
             "apns_production" => JG_APNS,
         ];
